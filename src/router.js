@@ -6,7 +6,7 @@ import Overview from "./views/Overview.vue";
 import Transactions from "./views/Transactions.vue";
 import WishAccess from "./views/WishAccess.vue";
 import Profile from "./views/Profile.vue";
-import Avaiable from "./views/Avaiable.vue";
+import Available from "./views/Avaiable.vue";
 
 // import Liquidate from "./views/Liquidate.vue";
 import {fb} from './firebase'
@@ -49,15 +49,11 @@ const router =  new Router({
           component: WishAccess
         },
         {
-          path: "avaiable",
-          name: "avaiable",
-          component: Avaiable
+          path: "available",
+          name: "available",
+          component: Available
         },
-        // {
-        //   path: "liquidate",
-        //   name: "liquidate",
-        //   component: Liquidate
-        // }
+       
       ]
     },  
     {

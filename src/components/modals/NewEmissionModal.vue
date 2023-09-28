@@ -1,26 +1,15 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row">        
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="quemLiquida">Quem reconheceu</label>
+          <label class="input-group-text" for="inputGroupSelect01">Para</label>
         </div>
-        <input
-            v-model="quemReconhece"
-            type="text"
-            class="form-control"                    
-        />
-      </div>         
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <label class="input-group-text" for="quemLiquida">Quem recebe</label>
-        </div>
-        <input
-            v-model="quemRecebe"
-            type="text"
-            class="form-control"                    
-        />
-      </div>         
+        <select class="custom-select" id="inputGroupSelect01" v-model="quemRecebe">
+          <option selected>Selecione...</option>
+          <option v-for="(u, index) in users" :key="index" :value="u.name">{{ u.name }}</option>
+            </select>
+      </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Quantidade</span>
@@ -45,26 +34,7 @@
           class="form-control"
           aria-label="With textarea"
         ></textarea>
-      </div>
-      <div class="input-group mb-3 mt-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Quem recebe tem desejo de liquidação</span>
-        </div>
-        <textarea
-          v-model="preLiquiWish"        
-          class="form-control"          
-        />        
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Contato</span>
-        </div>
-        <input
-          type="text"
-          v-model="contact"        
-          class="form-control"          
-        />        
-      </div>
+      </div>      
       <br />
       <div>
         <button
@@ -80,16 +50,13 @@
 </template>
 <script>
 export default {
-  name: "EmmitTokens",
+  name: "NewEmissionModal",
   data: function() {
     return {
       transactions: [],
-      descricao: null,
-      quemReconhece: null,
+      descricao: null,      
       quemRecebe: null,
-      amount: null,
-      preLiquiWish: null,
-      contact: null  
+      amount: null,     
     };
   },  
   methods: {
@@ -101,19 +68,25 @@ export default {
         this.quemReconhece !== null
       ) {
         let payload = {
-          fromName: this.quemReconhece,
           toName: this.quemRecebe,
+          //toUid: this.quemRecebe.id,
           amount: this.amount,
-          description: this.descricao,
-          preLiquiWish: this.preLiquiWish,
-          contact: this.contact
-          
+          description: this.descricao,         
         };
         this.$store.dispatch("emmitTokens", payload);
         this.clearFields();
       } else {
         alert("Faltou preencher algum campo. Tente novamente");
       }
+    },      
+    clearFields() {
+      this.quemRecebe = null;
+      this.descricao = null;      
+      this.amount = null;
+      this.email = null;
+      //this.quemReconhece = this.userProfile;
+      this.contact = null;
+      this.preLiquiWish = null;
     },
     enviarEmail() {
       if (
@@ -131,16 +104,16 @@ export default {
       } else {
         alert("Faltou preencher algum campo. Tente novamente");
       }
-    },    
-    clearFields() {
-      this.quemRecebe = null;
-      this.descricao = null;      
-      this.amount = null;
-      this.email = null;
-      this.quemReconhece = null;
-      this.contact = null;
-      this.preLiquiWish = null;
-    },
+    },  
   },
+  computed: {
+    userProfile() {
+      return this.$store.state.userProfile.uid;
+    },
+    users() {
+      return this.$store.state.users;
+    },
+
+  }
 };
 </script>

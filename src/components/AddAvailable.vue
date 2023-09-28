@@ -57,7 +57,7 @@
 </template>
 <script>
 export default {
-    name: "AddAvaiable",
+    name: "AddAvailable",
     data: function() {
         return {
             title: null,
@@ -74,7 +74,7 @@ export default {
                 mode: this.mode,
                 tags: this.tags
             }
-            await this.$store.dispatch("saveAvaiableDb", payload);
+            await this.$store.dispatch("saveAvailableDb", payload);
             this.clearFields();
         },
         clearFields() {

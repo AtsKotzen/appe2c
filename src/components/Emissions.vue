@@ -8,8 +8,7 @@
         <tr>
           <th scope="col">Quem reconheceu</th>
           <th scope="col">Quem recebeu</th>
-          <th scope="col">Descrição</th>
-          <th scope="col">Contato</th>
+          <th scope="col">Descrição</th>          
           <th scope="col">Quantidade</th>
           <th scope="col">Ação</th>
         </tr>
@@ -21,8 +20,7 @@
         >
           <td>{{ i.fromName }}</td>
           <td>{{ i.toName || i.name }}</td>
-          <td>{{ i.description }}</td>
-          <td>{{ i.contact }}</td>
+          <td>{{ i.description }}</td>          
           <td>{{ i.currentAmount }}</td>
           <!-- Button trigger modal -->
           <button
@@ -62,7 +60,7 @@
               <p><strong>Token emitido por: </strong> {{ selected.fromName }}</p>
               <p><strong>Descrição: </strong> {{ selected.description }}</p>                                      
             </div>
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="description">Quem liquida</label>
                 </div>
@@ -71,7 +69,7 @@
                     type="text"
                     class="form-control"                    
                 />
-            </div>
+            </div> -->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="description">Como a liquidação ocorreu</label>
@@ -140,7 +138,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <EmmitTokens />
+            <NewEmissionModal />
           </div>
         </div>
       </div>
@@ -148,14 +146,14 @@
   </div>
 </template>
 <script>
-import EmmitTokens from "./EmmitTokens";
+import NewEmissionModal from "./modals/NewEmissionModal";
 export default {
   name: "Emissions",
-  components: { EmmitTokens },
+  components: { NewEmissionModal },
   data() {
     return {
       selected: {},
-      fromName: "",
+      //fromName: "",
       descricao: "",
       how: "",
       amount: null,
@@ -180,7 +178,7 @@ export default {
     liquidar() {
       let payload = {
         description: this.descricao,
-        fromName: this.fromName,
+        //fromName: this.fromName,
         amount: this.amount,
         how: this.how,
         selected: this.selected,
@@ -189,7 +187,7 @@ export default {
         comments: this.comments  
       };  
       this.$store.dispatch('liquidateTokens', payload);   
-      this.fromName = "", 
+      //this.fromName = "", 
       this.how = "",
       this.amount = null,
       this.descricao = "";  

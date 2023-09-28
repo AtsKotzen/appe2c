@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr  v-for="(o, index) in avaiable" :key="index">          
+        <tr  v-for="(o, index) in available" :key="index">          
           <td>{{ o.fromName }}</td>
           <td>{{ o.title }}</td>
           <td>{{ o.description }} </td>          
@@ -21,10 +21,10 @@
 </template>
 <script>
 export default {
-  name: "AvaiableTable",
+  name: "AvailableTable",
   computed: {
-    avaiable: function() {
-      return this.$store.state.avaiable;
+    available: function() {
+      return this.$store.state.available;
     },
   },
 };

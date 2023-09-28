@@ -2,15 +2,15 @@
   <div>     
     <div>
       <h3>Desejos de acesso</h3>
-      <WishesTable />
+      <AllWishes />
     </div>    
   </div>
 </template>
 <script>
-import WishesTable from "../components/WishesTable";
+import AllWishes from "../components/AllWishes";
 
 export default {
   name: "WishAccess",
-  components: { WishesTable },
+  components: { AllWishes },
 };
 </script>

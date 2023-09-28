@@ -50,7 +50,7 @@
                     <label>Nome</label>
                     <input
                       type="text"
-                      name=""
+                      name="name"
                       v-model="profile.name"                      
                       class="form-control"
                     />
@@ -72,7 +72,7 @@
                   <div class="form-group">
                     <label>Celular</label>
                     <input
-                      type="text"
+                      type="phone"
                       v-model="profile.phone"
                       
                       class="form-control"
@@ -84,7 +84,7 @@
                   <div class="form-group">
                     <label>Endereço</label>
                     <input
-                      type="text"
+                      type="address"
                       v-model="profile.address"                      
                       class="form-control"
                     />
@@ -157,7 +157,7 @@ export default {
   },
   methods: {  
     updateProfile() { 
-       this.$firestore.profile.update(this.profile);     
+       this.$firestore.profiles.update(this.profile);     
       alert("Perfil atualizado");
       this.$router.replace("overview");           
     },    

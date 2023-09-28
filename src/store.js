@@ -72,31 +72,31 @@ fb.allWishes.onSnapshot((snapshot) => {
 
   store.commit("setAllWishes", wishesArray);
 });
-// All Avaiable
-fb.avaiable.onSnapshot((snapshot) => {
-  let avaiableArray = [];
+// All Available
+fb.available.onSnapshot((snapshot) => {
+  let availableArray = [];
 
   snapshot.forEach((doc) => {
-    let avaiable = doc.data();
-    avaiable.id = doc.id;
+    let available = doc.data();
+    available.id = doc.id;
 
-    avaiableArray.push(avaiable);
+    availableArray.push(available);
   });
 
-  store.commit("setAvaiable", avaiableArray);
+  store.commit("setAvailable", availableArray);
 });
-// Avaiable Active
-fb.avaiableActive.onSnapshot((snapshot) => {
-  let avaiableActiveArray = [];
+// Available Active
+fb.availableActive.onSnapshot((snapshot) => {
+  let availableActiveArray = [];
 
   snapshot.forEach((doc) => {
-    let avaiableActive = doc.data();
-    avaiableActive.id = doc.id;
+    let availableActive = doc.data();
+    availableActive.id = doc.id;
 
-    avaiableActiveArray.push(avaiableActive);
+    availableActiveArray.push(availableActive);
   });
 
-  store.commit("setAvaiableActive", avaiableActiveArray);
+  store.commit("setAvailableActive", availableActiveArray);
 });
 
 // All Liquidations
@@ -121,8 +121,8 @@ const store = new Vuex.Store({
     myTokens: [],
     waitingToLiquidate: [],
     allWishes: [],
-    avaiable: [],
-    avaiableActive: [],
+    available: [],
+    availableActive: [],
     intentionLiquidation: [],
     liquidations: []
   },
@@ -148,11 +148,11 @@ const store = new Vuex.Store({
     setAllWishes(state, val) {
       state.allWishes = val;
     },
-    setAvaiable(state, val) {
-      state.avaiable = val;
+    setAvailable(state, val) {
+      state.available = val;
     },
-    setAvaiableActive(state, val) {
-      state.avaiableActive = val;
+    setAvailableActive(state, val) {
+      state.availableActive = val;
     },
     setIntentionsLiquidation(state, val) {
       state.intentionLiquidation = val;
@@ -181,8 +181,9 @@ const store = new Vuex.Store({
 
       // create user object in userCollections
       await fb.usersCollection.doc(user.uid).set({
+        createdAt: new Date(),
         name: form.name,
-        title: form.title,
+        //title: form.title,
         uid: user.uid,
       });
 
@@ -217,13 +218,15 @@ const store = new Vuex.Store({
     async emmitTokens({ state, commit }, payload) {  
       await fb.emissions.add({
         createdAt: new Date(),  
+        fromUid: fb.auth.currentUser.uid,  
+        fromName: state.userProfile.name,
         initialAmount: payload.amount,
         currentAmount: payload.amount,
-        fromName: payload.fromName,  
         toName: payload.toName,
+        //toUid: payload.toUid,
         description: payload.description,
-        liquidationWish: payload.preLiquiWish,
-        contact: payload.contact
+        //liquidationWish: payload.preLiquiWish,
+        //contact: payload.contact
       });
       $('#addEmission').modal('hide');
     },
@@ -248,7 +251,7 @@ const store = new Vuex.Store({
       const amount = payload.amount;
       const total = currentAmount - amount;
       const toName = payload.toName;
-      const fromName = payload.fromName;
+      const fromName = state.userProfile.name;
       const liquidationMethod = payload.how;
       const description = payload.description;
       const comments = payload.comments;
@@ -284,8 +287,8 @@ const store = new Vuex.Store({
       });     
       $('#addwish').modal('hide');
     },
-    async saveAvaiableDb({ state, commit }, payload) {
-      await fb.avaiable.add({
+    async saveAvailableDb({ state, commit }, payload) {
+      await fb.available.add({
         createdAt: new Date(),
         fromUid: fb.auth.currentUser.uid,
         fromName: state.userProfile.name,
@@ -295,7 +298,7 @@ const store = new Vuex.Store({
         tags: payload.tags,
         active: true,
       });
-      $('#addavaiable').modal('hide');  
+      $('#addavailable').modal('hide');  
     },  
     async fetchUsers({ commit }) {
       await fb.usersCollection.get();
@@ -305,11 +308,10 @@ const store = new Vuex.Store({
     },  
     async updateProfile({ dispatch }, user) {
       const userId = fb.auth.currentUser.uid;
-      //console.log(userId);
       // update user object
       const userRef = await fb.usersCollection.doc(userId).update({
         name: user.name,
-        title: user.title,
+        //title: user.title,
         uid: user.uid
       });
       dispatch("fetchUserProfile", { uid: userId });

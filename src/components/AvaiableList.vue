@@ -2,11 +2,11 @@
   <div>
     <div class="card bg-warning">
       <h6 class="ml-3 mr-3 mb-1 mt-1">Para usufruto comum
-      <button @click="addAvaiable()">+</button>
+      <button @click="addAvailable()">+</button>
       </h6>
       <table class="table table-hover">
-        <tbody class="bg-white" :v-model="selectedAvaiable">
-          <tr v-for="(o, index) in avaiable" :key="index" @click="details(o)">
+        <tbody class="bg-white" :v-model="selectedAvailable">
+          <tr v-for="(o, index) in available" :key="index" @click="details(o)">
             <td>{{ o.title }}</td>
           </tr>
         </tbody>
@@ -15,18 +15,18 @@
     <!-- Details Modal -->
     <div
       class="modal fade"
-      id="avaiableDetails"
+      id="availableDetails"
       data-backdrop="static"
       data-keyboard="false"
       tabindex="-1"
-      aria-labelledby="avaiableDetailsLabel"
+      aria-labelledby="availableDetailsLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="avaiableDetailsLabel">
-              {{ selectedAvaiable.title }}
+            <h5 class="modal-title" id="availableDetailsLabel">
+              {{ selectedAvailable.title }}
             </h5>
             <button
               type="button"
@@ -38,8 +38,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <p><strong>Disponibilizado por:</strong> {{ selectedAvaiable.fromName }}</p>            
-            <p><strong>Descrição:</strong> {{ selectedAvaiable.description }}</p>                      
+            <p><strong>Disponibilizado por:</strong> {{ selectedAvailable.fromName }}</p>            
+            <p><strong>Descrição:</strong> {{ selectedAvailable.description }}</p>                      
           </div>
           <div class="modal-footer">
             <button
@@ -53,20 +53,20 @@
         </div>
       </div>
     </div>
-                <!-- Add Avaiable Modal -->
+                <!-- Add Available Modal -->
     <div
       class="modal fade bg-warning"
-      id="addavaiable"
+      id="addavailable"
       data-backdrop="static"
       data-keyboard="false"
       tabindex="-1"
-      aria-labelledby="addAvaiableLabel"
+      aria-labelledby="addAvailableLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addAvaiableLabel">
+            <h5 class="modal-title" id="addAvailableLabel">
              Disponibilizar para usufruto Comum
             </h5>
             <button
@@ -79,7 +79,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <AddAvaiable />  
+            <AddAvailable />  
           </div>
           <div class="modal-footer">
             <button
@@ -96,29 +96,29 @@
   </div>
 </template>
 <script>
-import AddAvaiable from "./AddAvaiable";
+import AddAvailable from "./AddAvailable";
 export default {
-  name: "AvaiableList",
+  name: "AvailableList",
   components: {
-    AddAvaiable
+    AddAvailable
   },
   data() {
     return {
-      selectedAvaiable: {},
+      selectedAvailable: {},
     };
   },
   computed: {
-    avaiable: function() {
-      return this.$store.state.avaiableActive;
+    available: function() {
+      return this.$store.state.availableActive;
     },
   },
   methods: {
     details(o) {
-      $('#avaiableDetails').modal('show');
-      this.selectedAvaiable = o;
+      $('#availableDetails').modal('show');
+      this.selectedAvailable = o;
     },
-    addAvaiable() {
-      $('#addavaiable').modal('show');      
+    addAvailable() {
+      $('#addavailable').modal('show');      
     }
   },
 };

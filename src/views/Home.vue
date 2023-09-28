@@ -2,7 +2,7 @@
   <div>
     <div>
       <Navbar></Navbar>
-    </div>
+    </div>    
     <div
       id="carouselExampleIndicators"
       class="carousel slide"
@@ -50,6 +50,7 @@
     <login></login>
   </div>
 </template>
+
 <script>
 import Login from "@/components/Login.vue";
 
@@ -61,4 +62,4 @@ export default {
 };
 </script>
 
-<style></style>
+

@@ -4,8 +4,8 @@
      <div class="container">
        
         <router-link class="navbar-brand" to="/">
-        <!-- <img src="..\assets\default_image.png" width="150px"> -->
-        <h3>E2C</h3>
+        <img src="../assets\logo-ReRe.jpeg" width="60px">
+        <!-- <h3>E2C</h3> -->
         
         </router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

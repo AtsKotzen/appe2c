@@ -64,7 +64,7 @@
           <Logistic />
         </div>
         <div class="mb-5">
-          <AvaiableList />
+          <AvailableList />
         </div>
         <div class="mb-5">
           <WishesList />
@@ -79,11 +79,11 @@ import Emissions from "../components/Emissions";
 import Logistic from "../components/Logistic";
 import WaitingToLiquidate from "../components/WaitingToLiquidate";
 import WishesList from "../components/WishesList";
-import AvaiableList from "../components/AvaiableList";
+import AvailableList from "../components/AvaiableList";
 import Liquidated from "../components/Liquidated";
 export default {
   name: "Overview",
-  components: { Emissions, Logistic, WaitingToLiquidate, WishesList, AvaiableList, Liquidated },
+  components: { Emissions, Logistic, WaitingToLiquidate, WishesList, AvailableList, Liquidated },
   computed: {
     userProfile() {
       return this.$store.state.userProfile.uid;

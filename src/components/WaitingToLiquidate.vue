@@ -53,8 +53,8 @@
             <div class="input-group mb-3">
             <div>
               <p><strong>Liquidar por algo disponível?</strong></p>
-              <select name="avaiableSelected" id="avaiableSelected" v-model="avaiableSelected">
-                <option v-for="av in avaiable" :value="av.id" :key="av.id">{{av.title}}</option>
+              <select name="availableSelected" id="availableSelected" v-model="availableSelected">
+                <option v-for="av in available" :value="av.id" :key="av.id">{{av.title}}</option>
               </select>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default {
       description: null,
       wish: null,
       waitingToLiquidate: null,
-      avaiableSelected: null,
+      availableSelected: null,
       intentionId: null  
     };
   },
@@ -110,8 +110,8 @@ export default {
     wishes: function() {
       return this.$store.state.allWishes;
     },
-    avaiable: function() {
-      return this.$store.state.avaiableActive;
+    available: function() {
+      return this.$store.state.availableActive;
     },  
   },
   methods: {
@@ -136,7 +136,7 @@ export default {
         intentionId: this.intentionId,
         currentAmount: this.currentAmount,       
         amount: this.amount,
-        avaiableSelected: this.avaiableSelected,
+        availableSelected: this.availableSelected,
         wishId: this.wish
       }      
       this.$store.dispatch("liquidateTokens", payload);

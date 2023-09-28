@@ -1,5 +1,11 @@
 <template>
-    
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">
+        <div class="form-group">
+            <button class="btn btn-primary" @click="sendPasswordResetEmail">Entrar</button>
+        </div>                                
+    </div>
 </template>
 <script>
 export default {

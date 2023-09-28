@@ -1,14 +1,16 @@
 <template>
   <div>    
     <div>
-      <AvaiableTable />
+      <AllAvailable />
+      <AvailableList />
     </div>
   </div>
 </template>
 <script>
-import AvaiableTable from "../components/AvaiableTable";
+import AllAvailable from "../components/AllAvailable";
+import AvailableList from "../components/AvaiableList";
 export default {
-  name: "Avaiable",
-  components: { AvaiableTable },
+  name: "Available",
+  components: { AllAvailable, AvailableList },
 };
 </script>
