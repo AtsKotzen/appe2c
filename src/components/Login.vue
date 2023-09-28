@@ -51,7 +51,7 @@
                 aria-labelledby="pills-login-tab"
               >
                 <center>
-                  <img src="../assets\logo-ReRe.jpeg" width="150px" />
+                  <img src="../assets/logo-ReRe.jpeg" width="150px" />
                 </center>
                 <br />
                 <h5 class="text-center">Login</h5>
@@ -105,7 +105,7 @@
                 aria-labelledby="pills-register-tab"
               >
                 <center>
-                  <img src="../assets\logo-ReRe.jpeg" width="150px" />
+                  <img src="../assets/logo-ReRe.jpeg" width="150px" />
                 </center>
                 <br />
                 <h5 class="text-center">Nova Conta</h5>

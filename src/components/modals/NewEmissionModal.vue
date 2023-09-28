@@ -7,7 +7,7 @@
         </div>
         <select class="custom-select" id="inputGroupSelect01" v-model="quemRecebe">
           <option selected>Selecione...</option>
-          <option v-for="(u, index) in users" :key="index" :value="u.name">{{ u.name }}</option>
+          <option v-for="(u, index) in otherUsers" :key="index" :value="u.name">{{ u.name }}</option>
             </select>
       </div>
       <div class="input-group mb-3">
@@ -113,6 +113,10 @@ export default {
     users() {
       return this.$store.state.users;
     },
+    otherUsers() {
+    // Filtrar os usuários para excluir o usuário logado
+    return this.users.filter(user => user.name !== this.userProfile.name);
+  }
 
   }
 };

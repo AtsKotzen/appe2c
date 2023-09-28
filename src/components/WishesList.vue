@@ -43,7 +43,7 @@
           </div>
           <div class="modal-body">
             <p><strong>Deseja acessar:</strong> {{ wishDetails.title }}</p>            
-            <p><strong>Descrição:</strong> {{ wishDetails.description }}</p>                      
+            <p><strong>Motivo:</strong> {{ wishDetails.description }}</p>                      
           </div>
           <div class="modal-footer">
             <button
