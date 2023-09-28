@@ -5,11 +5,13 @@
         <tr>          
           <th scope="col">Nome</th>
           <th scope="col">Deseja Acessar</th>          
+          <th scope="col">Motivo</th>          
         </tr>
       </thead>
       <tbody>
         <tr  v-for="(o, index) in allWishes" :key="index">          
           <td>{{ o.fromName }}</td>
+          <td>{{ o.title }}</td>
           <td>{{ o.description }} </td>          
         </tr>      
       </tbody>

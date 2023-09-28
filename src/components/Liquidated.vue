@@ -1,10 +1,14 @@
 <template>
   <div>
+    <h4>Histórico de Liquidações</h4>
     <table class="table table-hover">
-      
       <tbody>
         <tr v-for="(i, index) in liquidated" :key="index">
-          <td><strong>{{ i.fromName }}</strong> liquidou <strong>{{ i.amount }}</strong> tokens E2C para <strong>{{ i.toName }}</strong> por <strong>{{ i.how }}</strong></td>          
+          <td>
+            <strong>{{ i.fromName }}</strong> liquidou
+            <strong>{{ i.amount }}</strong> tokens E2C para
+            <strong>{{ i.toName }}</strong> por <strong>{{ i.how }}</strong>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -14,12 +18,12 @@
 export default {
   name: "Liquidated",
   computed: {
-      liquidated: function() {
-        return this.$store.state.liquidations;
-      },
-      emissions: function() {
-        return this.$store.state.emissions;
-      }
-  }
+    liquidated: function () {
+      return this.$store.state.liquidations;
+    },
+    emissions: function () {
+      return this.$store.state.emissions;
+    },
+  },
 };
 </script>

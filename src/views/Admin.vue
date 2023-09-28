@@ -58,7 +58,7 @@
               <li>
                 <router-link to="/admin/transactions">
                   <i class="fas fa-hand-spock"></i>                  
-                  <span>Reconhecimentos</span>
+                  <span>Histórico</span>
                 </router-link>
               </li>
               <!-- <li>

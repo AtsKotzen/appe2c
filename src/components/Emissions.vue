@@ -162,7 +162,7 @@ export default {
   },
   computed: {
     userProfile: function() {
-      return this.$store.state.userProfile;
+      return this.$store.state.userProfile.name;
     },
     emissions: function() {
       return this.$store.state.tokens
@@ -178,7 +178,7 @@ export default {
     liquidar() {
       let payload = {
         description: this.descricao,
-        //fromName: this.fromName,
+        fromName: this.userProfile,
         amount: this.amount,
         how: this.how,
         selected: this.selected,
@@ -187,7 +187,7 @@ export default {
         comments: this.comments  
       };  
       this.$store.dispatch('liquidateTokens', payload);   
-      //this.fromName = "", 
+      this.fromName = "", 
       this.how = "",
       this.amount = null,
       this.descricao = "";  

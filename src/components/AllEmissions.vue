@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>Todos os Reconhecimentos</h4>
+    <h4>Histórico de Emissões</h4>
     <table class="table table-hover">
       <thead>        
         <tr>

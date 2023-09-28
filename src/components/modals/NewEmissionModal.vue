@@ -108,7 +108,7 @@ export default {
   },
   computed: {
     userProfile() {
-      return this.$store.state.userProfile.uid;
+      return this.$store.state.userProfile;
     },
     users() {
       return this.$store.state.users;
