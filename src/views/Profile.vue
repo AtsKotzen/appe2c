@@ -8,6 +8,9 @@
             <p>
               Altere seus dados aqui
             </p>
+            <p>
+              *** Definir quais campos / dados devemos salvar ***
+            </p>
           </div>
           <div class="col-md-5">
             <img
@@ -56,7 +59,7 @@
                     />
                   </div>
                 </div>
-
+                <h3>***Salvando e recuperando somente o nome</h3>
                  <div class="col-md-8">
                   <div class="form-group">
                     <label>Cep</label>
