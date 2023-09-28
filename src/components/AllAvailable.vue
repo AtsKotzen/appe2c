@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h3>Para usufruto comum</h3>
+      <h3>Piscina Comum</h3>
     <table class="table table-hover">
       <thead>
         <tr>          

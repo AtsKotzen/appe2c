@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card bg-warning">
-      <h6 class="ml-3 mr-3 mb-1 mt-1">Para usufruto comum
+      <h6 class="ml-3 mr-3 mb-1 mt-1">Piscina Comum
       <button @click="addAvailable()">+</button>
       </h6>
       <table class="table table-hover">

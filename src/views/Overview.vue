@@ -1,6 +1,6 @@
 <template>
-  <div class="overview">
-    <div class="row">
+  <div class="overview">    
+    <div class="row">      
       <div class="col-9">
         <div class="accordion mb-3" id="emissions">
           <div class="card">
@@ -30,6 +30,9 @@
             </div>
           </div>
         </div>
+        <div>
+          <Sankey />
+        </div>
         <div class="accordion mb-5" id="liquidated">
           <div class="card">
             <div class="card-header" id="headingTwo">
@@ -57,7 +60,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>        
       </div>
       <div class="col-3">
         <div class="mb-5">
@@ -80,6 +83,7 @@ import WaitingToLiquidate from "../components/WaitingToLiquidate";
 import WishesList from "../components/WishesList";
 import AvailableList from "../components/AvaiableList";
 import Liquidated from "../components/Liquidated";
+import Sankey from "../components/Sankey";
 export default {
   name: "Overview",
   components: {
@@ -89,6 +93,7 @@ export default {
     WishesList,
     AvailableList,
     Liquidated,
+    Sankey
   },
   computed: {
     userProfile() {
