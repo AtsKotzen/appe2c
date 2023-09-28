@@ -39,7 +39,9 @@
           </div>
           <div class="modal-body">
             <p><strong>Disponibilizado por:</strong> {{ selectedAvailable.fromName }}</p>            
-            <p><strong>Descrição:</strong> {{ selectedAvailable.description }}</p>                      
+            <p><strong>Item:</strong> {{ selectedAvailable.title }}</p>                      
+            <p><strong>Modo:</strong> {{ selectedAvailable.mode }}</p>                      
+            <p><strong>Motivo:</strong> {{ selectedAvailable.description }}</p>                      
           </div>
           <div class="modal-footer">
             <button

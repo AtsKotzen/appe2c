@@ -12,6 +12,7 @@
           <tr v-for="(g, index) in allWishes" :key="index" @click="details(g)">
             <td>{{ g.fromName }}</td>            
             <td>{{ g.title }}</td>            
+            <td>{{ g.description }}</td>            
           </tr>
         </tbody>
       </table>
@@ -43,7 +44,7 @@
           </div>
           <div class="modal-body">
             <p><strong>Deseja acessar:</strong> {{ wishDetails.title }}</p>            
-            <p><strong>Motivo:</strong> {{ wishDetails.description }}</p>                      
+            <p><strong>Para:</strong> {{ wishDetails.description }}</p>                      
           </div>
           <div class="modal-footer">
             <button
