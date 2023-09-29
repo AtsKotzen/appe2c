@@ -24,14 +24,13 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Modo</span>
+                    <label class="input-group-text" for="inputGroupSelect01">Modo</label>
                 </div>
-                <input
-                    v-model="mode"
-                    type="text"
-                    class="form-control"
-                    aria-label="Ex.: Único / Constante"
-                    />
+                <select class="custom-select" id="inputGroupSelect01" v-model="mode">
+                    <option>Abundante</option>
+                    <option>Empático</option>
+                    <option>Condicionado</option>
+                </select>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

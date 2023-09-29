@@ -4,7 +4,7 @@
      <div class="container">
        
         <router-link class="navbar-brand" to="/">
-        <img src="../assets\logo-ReRe.jpeg" width="60px">
+        <img src="../assets/logo-ReRe.jpeg" width="60px">
         <!-- <h3>E2C</h3> -->
         
         </router-link>

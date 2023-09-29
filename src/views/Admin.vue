@@ -13,7 +13,7 @@
         <div class="sidebar-content">
           <!-- sidebar-brand  -->
           <div class="sidebar-item sidebar-brand">
-            <a href="#"> <img src="../assets\logo-ReRe-circle.png" width="42px" /> E2C</a>
+            <a href="#"> <img src="../assets/logo-ReRe-circle.png" width="42px" /> E2C</a>
             <div id="close-sidebar" @click="closeMenu">
               <i class="fas fa-times"></i>
             </div>

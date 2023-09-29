@@ -6,8 +6,8 @@
           Reconhecer
         </button>
         <tr>
-          <th scope="col">Quem reconheceu</th>
           <th scope="col">Quem recebeu</th>
+          <th scope="col">Quem reconheceu</th>
           <th scope="col">Descrição</th>
           <th scope="col">Quantidade</th>
           <th scope="col">Ação</th>
@@ -15,8 +15,8 @@
       </thead>
       <tbody>
         <tr v-for="(i, index) in emissions" :key="index">
-          <td>{{ i.fromName }}</td>
           <td>{{ i.toName || i.name }}</td>
+          <td>{{ i.fromName }}</td>
           <td>{{ i.description }}</td>
           <td>{{ i.currentAmount }}</td>
           <!-- Button trigger modal -->

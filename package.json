@@ -20,7 +20,7 @@
     "sass-loader": "^13.3.2",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
-    "vue-firestore": "^0.3.30",
+    "vue-firestore": "^0.3.22",
     "vue-router": "^3.3.4",
     "vue-stripe-elements-plus": "^0.2.10",
     "vue2-editor": "^1.0.1",
